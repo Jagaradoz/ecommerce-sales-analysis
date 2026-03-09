@@ -13,25 +13,25 @@ This project aims to transform raw, multi-channel ecommerce data into actionable
 
 These insights directly support inventory optimization, pricing strategy, and targeted expansion efforts.
 
-## Table of Contents
-
-- [Ecommerce Sales Analysis](#ecommerce-sales-analysis)
-  - [Purpose](#purpose)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Tech Stack](#tech-stack)
-  - [Project Structure](#project-structure)
-  - [Dataset](#dataset)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-
 ## Features
 
 - **Top 10 States Sales Analysis**: Visualizes top-performing states by sales revenue using bar charts to identify key regional markets.
 - **B2B vs B2C Segmentation**: Comparative analysis of wholesale versus retail performance on Amazon.
 - **Cross-Platform Pricing**: Evaluation of MSRP strategies across major Indian e-commerce marketplaces.
 - **Inventory Management Insights**: Stock level analysis paired with category performance to flag supply chain risks.
+
+## Table of Contents
+
+- [Ecommerce Sales Analysis](#ecommerce-sales-analysis)
+  - [Purpose](#purpose)
+  - [Features](#features)
+  - [Table of Contents](#table-of-contents)
+  - [Tech Stack](#tech-stack)
+  - [Project Structure](#project-structure)
+  - [Dataset](#dataset)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
 ## Tech Stack
 
