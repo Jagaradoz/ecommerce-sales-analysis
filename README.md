@@ -4,7 +4,7 @@ Analyze ecommerce sales data to identify revenue trends, top-performing regions,
 
 ## Purpose
 
-This project aims to transform raw, multi-channel ecommerce data into actionable business intelligence. By analyzing B2B/B2C sales, inventory levels, and cross-platform pricing data, we uncover insights that drive profitability and operational efficiency. The analysis answers critical real-world questions such as:
+This project aims to transform raw ecommerce data into actionable business intelligence. By analyzing B2B/B2C sales, inventory levels, and cross-platform pricing data, we uncover insights that drive profitability and operational efficiency. The analysis answers critical real-world questions such as:
 
 - How do sales and revenue compare across the top 10 states?
 - What are the distinct purchasing behaviors between B2B and B2C channels?
@@ -15,10 +15,28 @@ These insights directly support inventory optimization, pricing strategy, and ta
 
 ## Features
 
-- **Top 10 States Sales Analysis**: Visualizes top-performing states by sales revenue using bar charts to identify key regional markets.
-- **B2B vs B2C Segmentation**: Comparative analysis of wholesale versus retail performance on Amazon.
-- **Cross-Platform Pricing**: Evaluation of MSRP strategies across major Indian e-commerce marketplaces.
-- **Inventory Management Insights**: Stock level analysis paired with category performance to flag supply chain risks.
+- **State Sales Analysis** (`01_state_sales_analysis.ipynb`): Geographic sales performance across Indian states
+  - Top 10 states by revenue with multi-currency comparison (INR, USD, THB)
+  - Fulfillment method distribution (Amazon vs Merchant fulfillment)
+  - Order volume vs revenue performance analysis
+  - Average order value by state
+  - State-level performance metrics and insights
+  
+- **Time Series Analysis** (`02_time_series_analysis.ipynb`): Temporal patterns and trends in sales data
+  - Daily sales revenue trends with 7-day moving average
+  - Daily order volume tracking
+  - Revenue distribution analysis
+  - Monthly sales performance (revenue and quantity)
+  - Day-of-week performance patterns
+  - Peak sales identification and trend analysis
+  
+- **Category Performance** (`03_category_performance.ipynb`): Product category insights and optimization
+  - Category-wise revenue analysis and market share
+  - Cancellation rate analysis by category
+  - Fulfillment method performance comparison (Amazon vs Merchant)
+  - B2B vs B2C sales patterns by category
+  - Average order value by category
+  - Actionable recommendations for inventory and marketing strategy
 
 ## Table of Contents
 
@@ -47,11 +65,23 @@ These insights directly support inventory optimization, pricing strategy, and ta
 ## Project Structure
 ```text
 ecommerce-sales-analysis/
-├── data/                  # excluded from version control (.gitignore)
-│   ├── raw/               # place downloaded dataset here
-│   └── processed/         # auto-generated after running the notebook
-├── images/                # charts and visualizations exported from the notebook
-├── notebooks/             # Jupyter notebooks for analysis and exploration
+├── data/                                       # excluded from version control (.gitignore)
+│   ├── amazon_sale_report.csv                  # primary transaction records
+│   ├── international_sale_report.csv           # B2B wholesale transactions
+│   ├── sale_report.csv                         # inventory catalog
+│   ├── may_2022.csv                            # pricing comparison
+│   ├── p_l_march_2021.csv                      # pricing comparison
+│   ├── expense_iigf.csv                        # operational expenses
+│   └── cloud_warehouse_compersion_chart.csv    # shipping expenses
+├── images/                                     # charts and visualizations exported from notebooks
+│   ├── 01_state_sales_analysis/                # state-level sales visualizations
+│   ├── 02_time_series_analysis/                # temporal trend charts
+│   └── 03_category_performance/                # category and product insights
+├── notebooks/                                  # Jupyter notebooks for analysis
+│   ├── 01_state_sales_analysis.ipynb           # state-wise sales performance
+│   ├── 02_time_series_analysis.ipynb           # temporal patterns and forecasting
+│   └── 03_category_performance.ipynb           # product category analysis
+└── README.md
 ```
 
 ## Dataset
@@ -89,14 +119,13 @@ The dataset consists of multiple related exports reflecting diverse business ope
 ```bash
    pip install -r requirements.txt
 ```
-4. Download the dataset via Kaggle API:
+4. Download and prepare the dataset:
 ```bash
    pip install kaggle
-   kaggle datasets download thedevastator/unlock-profits-with-e-commerce-sales-data -p data/raw --unzip
-```
-5. Rename data files to Python-friendly `snake_case`:
-```bash
-   cd data/raw
+   kaggle datasets download thedevastator/unlock-profits-with-e-commerce-sales-data -p data/ --unzip
+   
+   # Rename files to Python-friendly format
+   cd data/
    mv "Amazon Sale Report.csv" "amazon_sale_report.csv"
    mv "Cloud Warehouse Compersion Chart.csv" "cloud_warehouse_compersion_chart.csv"
    mv "Expense IIGF.csv" "expense_iigf.csv"
@@ -104,9 +133,9 @@ The dataset consists of multiple related exports reflecting diverse business ope
    mv "May-2022.csv" "may_2022.csv"
    mv "P  L March 2021.csv" "p_l_march_2021.csv"
    mv "Sale Report.csv" "sale_report.csv"
-   cd ../..
+   cd ..
 ```
-6. Launch the Jupyter notebook:
+5. Launch Jupyter notebooks:
 ```bash
-   jupyter notebook notebooks/01_top10_states_sales.ipynb
+   jupyter notebook notebooks/
 ```
