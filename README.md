@@ -66,22 +66,11 @@ These insights directly support inventory optimization, pricing strategy, and ta
 ```text
 ecommerce-sales-analysis/
 ├── data/                                       # excluded from version control (.gitignore)
-│   ├── amazon_sale_report.csv                  # primary transaction records
-│   ├── international_sale_report.csv           # B2B wholesale transactions
-│   ├── sale_report.csv                         # inventory catalog
-│   ├── may_2022.csv                            # pricing comparison
-│   ├── p_l_march_2021.csv                      # pricing comparison
-│   ├── expense_iigf.csv                        # operational expenses
-│   └── cloud_warehouse_compersion_chart.csv    # shipping expenses
 ├── images/                                     # charts and visualizations exported from notebooks
 │   ├── 01_state_sales_analysis/                # state-level sales visualizations
 │   ├── 02_time_series_analysis/                # temporal trend charts
 │   └── 03_category_performance/                # category and product insights
 ├── notebooks/                                  # Jupyter notebooks for analysis
-│   ├── 01_state_sales_analysis.ipynb           # state-wise sales performance
-│   ├── 02_time_series_analysis.ipynb           # temporal patterns and forecasting
-│   └── 03_category_performance.ipynb           # product category analysis
-└── README.md
 ```
 
 ## Dataset
