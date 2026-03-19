@@ -18,7 +18,6 @@ These insights directly support inventory optimization, pricing strategy, and ta
 - **State Sales Analysis** (`01_state_sales_analysis.ipynb`): Geographic sales performance across Indian states
   - Top 10 states by revenue with multi-currency comparison (INR, USD, THB)
   - Fulfillment method distribution (Amazon vs Merchant fulfillment)
-  - Order volume vs revenue performance analysis
   - Average order value by state
   - State-level performance metrics and insights
   
